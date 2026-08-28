@@ -1,1 +1,481 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REFUGE UNITED OFC | Free Fire Esports</title>
+  <meta name="description" content="REFUGE UNITED OFC — Free Fire Esports Team">
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Arial,Helvetica,sans-serif;
+      background:#fff;
+      color:#17121f;
+      line-height:1.6;
+    }
+    a{text-decoration:none;color:inherit}
+    .container{width:min(1150px,92%);margin:auto}
+
+    header{
+      position:sticky;
+      top:0;
+      z-index:1000;
+      background:rgba(255,255,255,.94);
+      backdrop-filter:blur(14px);
+      border-bottom:1px solid #eee5fa;
+    }
+    nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-weight:900;
+      letter-spacing:.5px;
+    }
+    .brand img{width:48px;height:48px;object-fit:contain}
+    .brand span{font-size:18px}
+    .nav-links{display:flex;gap:28px;align-items:center}
+    .nav-links a{font-size:14px;font-weight:700}
+    .nav-links a:hover{color:#6d20e8}
+    .nav-btn{
+      background:#6d20e8;
+      color:white;
+      padding:11px 18px;
+      border-radius:10px;
+    }
+
+    .hero{
+      min-height:calc(100vh - 76px);
+      display:flex;
+      align-items:center;
+      position:relative;
+      overflow:hidden;
+      background:
+        radial-gradient(circle at 80% 25%,rgba(123,45,230,.16),transparent 32%),
+        radial-gradient(circle at 10% 80%,rgba(123,45,230,.09),transparent 28%),
+        #fff;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      width:500px;height:500px;
+      right:-200px;top:-180px;
+      border:1px solid #eadcff;
+      border-radius:50%;
+    }
+    .hero-content{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      align-items:center;
+      gap:50px;
+      position:relative;
+      z-index:2;
+    }
+    .eyebrow{
+      color:#6d20e8;
+      font-weight:900;
+      letter-spacing:3px;
+      font-size:13px;
+      margin-bottom:12px;
+    }
+    h1{
+      font-size:clamp(48px,7vw,88px);
+      line-height:.95;
+      font-weight:950;
+      letter-spacing:-4px;
+    }
+    h1 span{color:#6d20e8}
+    .hero p{
+      max-width:570px;
+      margin:25px 0;
+      color:#625a6c;
+      font-size:17px;
+    }
+    .hero-buttons{display:flex;gap:12px;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:14px 23px;
+      border-radius:12px;
+      font-weight:800;
+      transition:.2s;
+    }
+    .btn-primary{background:#6d20e8;color:#fff;box-shadow:0 12px 30px rgba(109,32,232,.22)}
+    .btn-primary:hover{transform:translateY(-2px);background:#5815c5}
+    .btn-outline{border:1.5px solid #d9c5f4;color:#6d20e8}
+    .btn-outline:hover{background:#f7f1ff}
+
+    .hero-logo{
+      display:flex;
+      justify-content:center;
+      align-items:center;
+    }
+    .hero-logo img{
+      width:min(430px,80vw);
+      filter:drop-shadow(0 25px 35px rgba(109,32,232,.2));
+      animation:float 4s ease-in-out infinite;
+    }
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
+    }
+
+    section{padding:90px 0}
+    .section-head{text-align:center;margin-bottom:45px}
+    .section-head small{
+      color:#6d20e8;
+      font-weight:900;
+      letter-spacing:2px;
+    }
+    .section-head h2{
+      font-size:clamp(32px,5vw,50px);
+      margin-top:5px;
+      letter-spacing:-1.5px;
+    }
+    .section-head p{color:#716a78;margin-top:8px}
+
+    .about{
+      background:#faf8fd;
+      border-top:1px solid #f0eafa;
+      border-bottom:1px solid #f0eafa;
+    }
+    .about-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:30px;
+    }
+    .card{
+      background:#fff;
+      border:1px solid #eee5fa;
+      border-radius:20px;
+      padding:30px;
+      box-shadow:0 10px 35px rgba(38,10,65,.04);
+    }
+    .card h3{font-size:22px;margin-bottom:10px}
+    .card p{color:#706878}
+    .stats{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+      margin-top:20px;
+    }
+    .stat{
+      padding:22px 10px;
+      text-align:center;
+      border-radius:16px;
+      background:#f7f1ff;
+    }
+    .stat strong{display:block;font-size:27px;color:#6d20e8}
+    .stat span{font-size:12px;color:#6f6678;font-weight:700}
+
+    .players{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:20px;
+    }
+    .player{
+      padding:28px;
+      border:1px solid #eee5fa;
+      border-radius:20px;
+      text-align:center;
+      background:#fff;
+      transition:.25s;
+    }
+    .player:hover{transform:translateY(-5px);box-shadow:0 15px 35px rgba(109,32,232,.1)}
+    .player-icon{
+      width:70px;height:70px;
+      margin:auto auto 15px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      background:#f0e5ff;
+      color:#6d20e8;
+      font-size:27px;
+      font-weight:900;
+    }
+    .player h3{font-size:20px}
+    .player span{color:#6d20e8;font-size:12px;font-weight:900;letter-spacing:1px}
+
+    .shop{background:#faf8fd}
+    .product{
+      max-width:430px;
+      margin:auto;
+      background:#fff;
+      border:1px solid #eee5fa;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 15px 45px rgba(50,15,80,.07);
+    }
+    .product-image{
+      min-height:330px;
+      display:grid;
+      place-items:center;
+      padding:30px;
+      background:linear-gradient(145deg,#fff,#f4edff);
+    }
+    .product-image .placeholder{
+      text-align:center;
+      color:#6d20e8;
+      font-weight:900;
+      border:2px dashed #cdb0ef;
+      padding:50px 30px;
+      border-radius:18px;
+      width:100%;
+    }
+    .product-info{padding:25px}
+    .product-info h3{font-size:24px}
+    .price{font-size:26px;color:#6d20e8;font-weight:900;margin:5px 0 15px}
+    .sizes{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 20px}
+    .size{
+      border:1px solid #ded0ee;
+      border-radius:7px;
+      padding:5px 10px;
+      font-size:12px;
+      font-weight:700;
+    }
+
+    .contact{
+      background:#17121f;
+      color:#fff;
+      text-align:center;
+    }
+    .contact .section-head p{color:#bdb4c8}
+    .contact-buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .instagram{background:#6d20e8;color:#fff}
+    .whatsapp{background:#fff;color:#17121f}
+
+    footer{
+      background:#17121f;
+      border-top:1px solid #31273a;
+      color:#a99faf;
+      padding:25px 0;
+      text-align:center;
+      font-size:13px;
+    }
+    footer strong{color:#fff}
+
+    @media(max-width:800px){
+      .nav-links{display:none}
+      .hero{padding:60px 0}
+      .hero-content{grid-template-columns:1fr;text-align:center}
+      .hero p{margin-left:auto;margin-right:auto}
+      .hero-buttons{justify-content:center}
+      .hero-logo{order:-1}
+      .hero-logo img{width:260px}
+      .about-grid{grid-template-columns:1fr}
+      .players{grid-template-columns:1fr}
+      section{padding:70px 0}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="brand">
+        <img src="0A228175-3DD6-4AFA-9023-553137E2C1EF.png" alt="REFUGE UNITED OFC Logo">
+        <span>REFUGE UNITED OFC</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#home">HOME</a>
+        <a href="#team">TEAM</a>
+        <a href="#players">PLAYERS</a>
+        <a href="#shop">JERSEY</a>
+        <a href="#contact" class="nav-btn">CONTACT</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div>
+      <div class="eyebrow">FREE FIRE ESPORTS</div>
+      <h1>REFUGE<br><span>UNITED OFC</span></h1>
+      <p>
+        More than a team. A united force built for competition,
+        discipline and the next level of Free Fire esports.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#shop" class="btn btn-primary">GET OFFICIAL JERSEY</a>
+        <a href="#team" class="btn btn-outline">EXPLORE TEAM</a>
+      </div>
+    </div>
+
+    <div class="hero-logo">
+      <img src="0A228175-3DD6-4AFA-9023-553137E2C1EF.png" alt="REFUGE UNITED OFC">
+    </div>
+  </div>
+</section>
+
+<section class="about" id="team">
+  <div class="container">
+    <div class="section-head">
+      <small>WHO WE ARE</small>
+      <h2>UNITED BY THE GAME.</h2>
+      <p>Built with passion. Driven by competition.</p>
+    </div>
+
+    <div class="about-grid">
+      <div class="card">
+        <h3>REFUGE UNITED OFC</h3>
+        <p>
+          REFUGE UNITED OFC is a Free Fire esports organization focused
+          on building a strong competitive community and representing
+          our identity with pride.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <strong>FF</strong>
+            <span>GAME</span>
+          </div>
+          <div class="stat">
+            <strong>OFC</strong>
+            <span>TEAM</span>
+          </div>
+          <div class="stat">
+            <strong>RU</strong>
+            <span>UNITED</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>OUR MISSION</h3>
+        <p>
+          To compete with discipline, grow together as a team and create
+          a recognizable esports identity both inside and outside the game.
+        </p>
+        <br>
+        <p>
+          Every match is another opportunity to prove what
+          <strong>REFUGE UNITED</strong> stands for.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="players">
+  <div class="container">
+    <div class="section-head">
+      <small>ROSTER</small>
+      <h2>OUR PLAYERS</h2>
+      <p>Meet the warriors representing REFUGE UNITED OFC.</p>
+    </div>
+
+    <div class="players">
+      <div class="player">
+        <div class="player-icon">01</div>
+        <h3>PLAYER NAME</h3>
+        <span>PLAYER</span>
+      </div>
+
+      <div class="player">
+        <div class="player-icon">02</div>
+        <h3>PLAYER NAME</h3>
+        <span>PLAYER</span>
+      </div>
+
+      <div class="player">
+        <div class="player-icon">03</div>
+        <h3>PLAYER NAME</h3>
+        <span>PLAYER</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="shop" id="shop">
+  <div class="container">
+    <div class="section-head">
+      <small>OFFICIAL MERCH</small>
+      <h2>REFUGE JERSEY</h2>
+      <p>Represent the team. Wear the identity.</p>
+    </div>
+
+    <div class="product">
+      <div class="product-image">
+        <div class="placeholder">
+          OFFICIAL<br>
+          REFUGE UNITED OFC<br>
+          JERSEY
+          <br><br>
+          <small>JERSEY IMAGE WILL BE ADDED HERE</small>
+        </div>
+      </div>
+
+      <div class="product-info">
+        <h3>Official Team Jersey</h3>
+        <div class="price">PRICE — CONTACT US</div>
+
+        <p>Available sizes:</p>
+        <div class="sizes">
+          <span class="size">S</span>
+          <span class="size">M</span>
+          <span class="size">L</span>
+          <span class="size">XL</span>
+          <span class="size">XXL</span>
+        </div>
+
+        <a
+          class="btn btn-primary"
+          style="width:100%"
+          href="https://www.instagram.com/refuge.united/?igsi=ZG5xems2NnUzajFx&utm_source=qr"
+          target="_blank">
+          BUY / ORDER NOW
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container">
+    <div class="section-head">
+      <small>CONNECT WITH US</small>
+      <h2>JOIN THE REFUGE.</h2>
+      <p>For jersey orders, partnerships and esports inquiries.</p>
+    </div>
+
+    <div class="contact-buttons">
+      <a
+        class="btn instagram"
+        href="https://www.instagram.com/refuge.united/?igsi=ZG5xems2NnUzajFx&utm_source=qr"
+        target="_blank">
+        INSTAGRAM
+      </a>
+
+      <a
+        class="btn whatsapp"
+        href="#"
+        onclick="alert('WhatsApp number will be added soon.');return false;">
+        WHATSAPP
+      </a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © 2026 <strong>REFUGE UNITED OFC</strong>. All Rights Reserved.
+</footer>
+
+</body>
+</html>

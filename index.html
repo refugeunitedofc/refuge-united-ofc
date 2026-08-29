@@ -11,10 +11,6 @@
 
 <style>
 
-/* =========================================================
-   ROOT
-========================================================= */
-
 :root{
     --purple:#7b2cff;
     --purple2:#a56bff;
@@ -2738,7 +2734,7 @@ Free Fire esports.
 href="#live"
 class="btn btn-primary"
 >
-WATCH LIVE
+CHECK LIVE
 </a>
 
 <a
@@ -2961,7 +2957,7 @@ FOUNDER & SPONSOR
 
 
 <!-- =========================================================
-     LIVE MATCH
+     LIVE MATCH — OFFLINE
 ========================================================= -->
 
 <section
@@ -2983,7 +2979,7 @@ MATCH LIVE
 </h2>
 
 <p style="color:#aaa1b5;">
-REFUGE UNITED OFC is currently live.
+REFUGE UNITED OFC is currently offline.
 </p>
 
 </div>
@@ -2995,34 +2991,34 @@ REFUGE UNITED OFC is currently live.
 <div class="live-status">
 
 <div
-class="live-dot active"
+class="live-dot"
 id="liveDot"
 ></div>
 
 <span id="liveStatusText">
-LIVE NOW
+OFFLINE
 </span>
 
 </div>
 
 
 <h3 id="liveTitle">
-REFUGE UNITED OFC — LIVE
+REFUGE UNITED OFC — OFFLINE
 </h3>
 
 
 <p id="liveDescription">
 
-REFUGE UNITED OFC is currently live.
-Join the stream and support the team.
+There is currently no active live stream.
+Follow REFUGE UNITED OFC for the next live match.
 
 </p>
 
 
 <a
 id="liveWatch"
-class="btn live-watch show"
-href="https://www.youtube.com/live/m3R8EbMB-X8?si=-mXwri5tz_16MoF"
+class="btn live-watch"
+href="#"
 target="_blank"
 rel="noopener noreferrer"
 >
@@ -3033,7 +3029,7 @@ rel="noopener noreferrer"
 <div
 class="no-live"
 id="noLiveText"
-style="display:none;"
+style="display:block;"
 >
 Currently there is no active live stream.
 </div>
@@ -3334,8 +3330,6 @@ The players representing REFUGE UNITED OFC.
 <div class="players">
 
 
-<!-- PLAYER 01 -->
-
 <article class="player reveal">
 
 <div class="player-image">
@@ -3394,8 +3388,6 @@ FB
 </article>
 
 
-<!-- PLAYER 02 -->
-
 <article class="player reveal">
 
 <div class="player-image">
@@ -3441,8 +3433,6 @@ FB
 
 </article>
 
-
-<!-- PLAYER 03 -->
 
 <article class="player reveal">
 
@@ -3490,8 +3480,6 @@ FB
 </article>
 
 
-<!-- PLAYER 04 -->
-
 <article class="player reveal">
 
 <div class="player-image">
@@ -3538,8 +3526,6 @@ FB
 </article>
 
 
-<!-- PLAYER 05 -->
-
 <article class="player reveal">
 
 <div class="player-image">
@@ -3585,8 +3571,6 @@ FB
 
 </article>
 
-
-<!-- PLAYER 06 -->
 
 <article class="player reveal">
 
@@ -4311,28 +4295,16 @@ window.addEventListener(
 
 
 /* =========================================================
-   LIVE MATCH SYSTEM
+   LIVE MATCH SYSTEM — CURRENTLY OFFLINE
 ========================================================= */
 
-/*
-    CURRENT LIVE STREAM
-
-    Your current YouTube Live link:
-
-    https://www.youtube.com/live/m3R8EbMB-X8?si=-mXwri5tz_16MoF
-
-    The website is currently configured to show
-    LIVE NOW and the WATCH LIVE button.
-*/
-
-const LIVE_MATCH_LINK =
-"https://www.youtube.com/live/m3R8EbMB-X8?si=-mXwri5tz_16MoF";
+const LIVE_MATCH_LINK = "";
 
 const LIVE_TITLE =
-"REFUGE UNITED OFC — LIVE";
+"REFUGE UNITED OFC — OFFLINE";
 
 const LIVE_DESCRIPTION =
-"REFUGE UNITED OFC is currently live. Join the stream and support the team.";
+"There is currently no active live stream. Follow REFUGE UNITED OFC for the next live match.";
 
 
 /* =========================================================
@@ -4371,61 +4343,38 @@ document.getElementById(
 
 
 /* =========================================================
-   SET LIVE STATUS
+   SET OFFLINE STATUS
 ========================================================= */
 
 function setLiveStatus(){
 
-    if(
-        LIVE_MATCH_LINK.trim() !== ""
-    ){
+    liveDot.classList.remove(
+        "active"
+    );
 
-        /* RED LIVE DOT */
+    liveStatusText.innerText =
+        "OFFLINE";
 
-        liveDot.classList.add(
-            "active"
-        );
+    liveTitle.innerText =
+        LIVE_TITLE;
 
+    liveDescription.innerText =
+        LIVE_DESCRIPTION;
 
-        /* LIVE NOW TEXT */
+    liveWatch.classList.remove(
+        "show"
+    );
 
-        liveStatusText.innerText =
-            "LIVE NOW";
+    liveWatch.style.display =
+        "none";
 
-
-        /* LIVE TITLE */
-
-        liveTitle.innerText =
-            LIVE_TITLE;
-
-
-        /* LIVE DESCRIPTION */
-
-        liveDescription.innerText =
-            LIVE_DESCRIPTION;
-
-
-        /* YOUTUBE LIVE BUTTON */
-
-        liveWatch.href =
-            LIVE_MATCH_LINK;
-
-        liveWatch.classList.add(
-            "show"
-        );
-
-
-        /* HIDE NO LIVE MESSAGE */
-
-        noLiveText.style.display =
-            "none";
-
-    }
+    noLiveText.style.display =
+        "block";
 
 }
 
 
-/* Run live status */
+/* Run offline status */
 
 setLiveStatus();
 

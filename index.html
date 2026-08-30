@@ -5467,4 +5467,300 @@ function showLive(
     );
 
 
-    liveTitle.innerText
+    liveTitle.innerText =
+        stream.title;
+
+
+    liveInfoChannel.innerText =
+        stream.channel.name +
+        " • " +
+        stream.channel.handle;
+
+
+    watchYoutube.href =
+        "https://www.youtube.com/watch?v=" +
+        encodeURIComponent(
+            stream.videoId
+        );
+
+
+    lastCheck.innerText =
+        "Live detected • " +
+        new Date().toLocaleTimeString();
+
+}
+
+
+/* =========================================================
+   SHOW NO LIVE
+========================================================= */
+
+function showNoLive(){
+
+    liveDot.classList.remove(
+        "active"
+    );
+
+    liveDot.classList.add(
+        "closed"
+    );
+
+    liveStatusText.innerText =
+        "NO LIVE MATCH";
+
+    liveChannel.innerText =
+        "Monitoring 3 YouTube channels";
+
+
+    livePlayer.classList.remove(
+        "show"
+    );
+
+
+    liveIframe.src =
+        "";
+
+
+    noLivePanel.classList.remove(
+        "hidden"
+    );
+
+
+    liveInfo.classList.remove(
+        "show"
+    );
+
+
+    lastCheck.innerText =
+        "Last checked • " +
+        new Date().toLocaleTimeString();
+
+}
+
+
+/* =========================================================
+   API ERROR
+========================================================= */
+
+function showLiveError(
+    error
+){
+
+    console.error(
+        "YouTube Live Monitor:",
+        error
+    );
+
+
+    liveDot.classList.remove(
+        "active"
+    );
+
+    liveDot.classList.add(
+        "closed"
+    );
+
+
+    liveStatusText.innerText =
+        "LIVE CHECK ERROR";
+
+
+    liveChannel.innerText =
+        "Please check YouTube API configuration";
+
+
+    livePlayer.classList.remove(
+        "show"
+    );
+
+
+    liveIframe.src =
+        "";
+
+
+    noLivePanel.classList.remove(
+        "hidden"
+    );
+
+
+    noLivePanel.querySelector(
+        "h3"
+    ).innerText =
+        "LIVE STATUS UNAVAILABLE";
+
+
+    noLivePanel.querySelector(
+        "p"
+    ).innerHTML =
+        "The website could not connect to the YouTube API.<br>" +
+        "Check your API key and API restrictions.";
+
+
+    liveInfo.classList.remove(
+        "show"
+    );
+
+
+    lastCheck.innerText =
+        "API error • " +
+        new Date().toLocaleTimeString();
+
+}
+
+
+/* =========================================================
+   CHECK ALL CHANNELS
+========================================================= */
+
+let liveCheckRunning =
+    false;
+
+
+async function checkAllChannels(){
+
+    if(liveCheckRunning){
+
+        return;
+    }
+
+
+    if(
+        !YOUTUBE_API_KEY ||
+        YOUTUBE_API_KEY.includes(
+            "PASTE_YOUR"
+        )
+    ){
+
+        showLiveError(
+            new Error(
+                "YouTube API key has not been configured."
+            )
+        );
+
+        return;
+    }
+
+
+    liveCheckRunning =
+        true;
+
+
+    try{
+
+        liveStatusText.innerText =
+            "CHECKING...";
+
+
+        liveChannel.innerText =
+            "Checking all 3 channels";
+
+
+        let liveStreams = [];
+
+
+        /*
+
+        Check all three channels.
+
+        Promise.all allows the requests
+        to happen simultaneously.
+
+        */
+
+        const results =
+            await Promise.all(
+                YOUTUBE_CHANNELS.map(
+                    channel =>
+                        checkChannel(
+                            channel
+                        )
+                )
+            );
+
+
+        results.forEach(
+            result=>{
+
+                if(result){
+
+                    liveStreams.push(
+                        result
+                    );
+
+                }
+
+            }
+        );
+
+
+        if(
+            liveStreams.length > 0
+        ){
+
+            /*
+               If multiple channels are live,
+               the first detected stream is shown.
+            */
+
+            showLive(
+                liveStreams[0]
+            );
+
+        }else{
+
+            showNoLive();
+
+        }
+
+    }catch(error){
+
+        showLiveError(
+            error
+        );
+
+    }finally{
+
+        liveCheckRunning =
+            false;
+
+    }
+
+}
+
+
+/* =========================================================
+   START LIVE MONITOR
+========================================================= */
+
+checkAllChannels();
+
+
+setInterval(
+    checkAllChannels,
+    LIVE_CHECK_INTERVAL
+);
+
+
+/* =========================================================
+   ESCAPE KEY
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    function(event){
+
+        if(
+            event.key === "Escape"
+        ){
+
+            closeMenu();
+
+        }
+
+    }
+);
+
+</script>
+
+</body>
+</html>

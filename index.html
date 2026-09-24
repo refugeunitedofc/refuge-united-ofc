@@ -1627,9 +1627,6 @@ section{
     z-index:2;
 }
 
-
-/* LIVE BOX */
-
 .live-box{
 
     max-width:1000px;
@@ -1653,9 +1650,6 @@ section{
         0 20px 70px
         rgba(0,0,0,.25);
 }
-
-
-/* LIVE HEADER */
 
 .live-header{
 
@@ -1745,9 +1739,6 @@ section{
     font-weight:800;
 }
 
-
-/* VIDEO */
-
 .live-player{
 
     display:none;
@@ -1783,9 +1774,6 @@ section{
 
     border:0;
 }
-
-
-/* NO LIVE */
 
 .no-live-panel{
 
@@ -1834,9 +1822,6 @@ section{
 
     line-height:1.7;
 }
-
-
-/* LIVE INFO */
 
 .live-info{
 
@@ -2133,188 +2118,6 @@ section{
 
 
 /* =========================================================
-   PLAYERS
-========================================================= */
-
-.players-section{
-
-    background:#fff;
-}
-
-.players{
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:22px;
-}
-
-.player{
-
-    background:#fff;
-
-    border:
-        1px solid
-        var(--border);
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    text-align:center;
-
-    transition:.3s;
-
-    box-shadow:
-        0 10px 30px
-        rgba(38,10,65,.04);
-}
-
-.player:hover{
-
-    transform:translateY(-7px);
-
-    border-color:#d6b9f5;
-
-    box-shadow:
-        0 20px 45px
-        rgba(109,32,232,.13);
-}
-
-.player-image{
-
-    height:390px;
-
-    background:
-
-        radial-gradient(
-            circle at center,
-            rgba(109,32,232,.13),
-            transparent 60%
-        ),
-
-        var(--purple-light);
-
-    overflow:hidden;
-}
-
-.player-image img{
-
-    width:100%;
-    height:100%;
-
-    object-fit:cover;
-
-    object-position:center top;
-
-    transition:.45s;
-}
-
-.player:hover .player-image img{
-
-    transform:scale(1.045);
-}
-
-.player-info{
-
-    padding:
-        22px
-        18px
-        25px;
-}
-
-.player-number{
-
-    display:inline-flex;
-
-    width:42px;
-    height:42px;
-
-    align-items:center;
-    justify-content:center;
-
-    border-radius:50%;
-
-    background:#f0e5ff;
-
-    color:var(--purple);
-
-    font-weight:950;
-
-    margin-bottom:10px;
-}
-
-.player h3{
-
-    font-size:20px;
-
-    line-height:1.25;
-}
-
-.player-role{
-
-    display:inline-block;
-
-    margin-top:7px;
-
-    color:var(--purple);
-
-    font-size:10px;
-
-    font-weight:950;
-
-    letter-spacing:1.5px;
-
-    text-transform:uppercase;
-}
-
-.socials{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:8px;
-
-    margin-top:16px;
-}
-
-.social{
-
-    width:35px;
-    height:35px;
-
-    border-radius:9px;
-
-    background:
-        var(--purple-light);
-
-    color:var(--purple);
-
-    display:grid;
-
-    place-items:center;
-
-    font-size:10px;
-
-    font-weight:950;
-
-    transition:.25s;
-}
-
-.social:hover{
-
-    background:var(--purple);
-
-    color:#fff;
-
-    transform:translateY(-3px);
-}
-
-
-/* =========================================================
    JERSEY
 ========================================================= */
 
@@ -2461,37 +2264,25 @@ section{
     background:#fff;
 }
 
-.order-buttons{
+.order-note{
 
-    display:grid;
+    color:var(--muted);
 
-    grid-template-columns:
-        1fr 1fr 1fr;
+    font-size:12px;
 
-    gap:10px;
+    line-height:1.7;
+
+    margin-top:5px;
 }
 
-.order-instagram{
+.order-note strong{
 
-    background:var(--purple);
-
-    color:#fff;
-}
-
-.order-whatsapp{
-
-    background:#f1fff5;
-
-    color:#14833b;
-
-    border:
-        1px solid
-        #c9f1d6;
+    color:var(--purple);
 }
 
 
 /* =========================================================
-   COMMUNITY
+   COMMUNITY / CONTACT
 ========================================================= */
 
 .community{
@@ -2504,7 +2295,7 @@ section{
     display:grid;
 
     grid-template-columns:
-        repeat(4,1fr);
+        repeat(5,1fr);
 
     gap:16px;
 }
@@ -2595,107 +2386,14 @@ section{
     font-size:10px;
 }
 
+.whatsapp-card{
 
-/* =========================================================
-   CONTACT
-========================================================= */
-
-.contact{
-
-    background:
-
-        linear-gradient(
-            145deg,
-            #0b0711,
-            #050309
-        );
-
-    color:#fff;
-
-    text-align:center;
-
-    position:relative;
-
-    overflow:hidden;
+    background:#fafffc;
 }
 
-.contact::before{
+.whatsapp-btn{
 
-    content:"";
-
-    position:absolute;
-
-    width:400px;
-    height:400px;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:
-        rgba(123,44,255,.1);
-
-    filter:blur(100px);
-
-    border-radius:50%;
-}
-
-.contact .container{
-
-    position:relative;
-
-    z-index:2;
-}
-
-.contact .section-head p{
-
-    color:#bdb4c8;
-}
-
-.contact-buttons{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:12px;
-
-    flex-wrap:wrap;
-}
-
-.instagram{
-
-    background:var(--purple);
-
-    color:#fff;
-}
-
-.whatsapp{
-
-    background:#fff;
-
-    color:#17121f;
-}
-
-.email{
-
-    background:#fff;
-
-    color:#17121f;
-}
-
-.contact-email{
-
-    margin-top:30px;
-
-    color:#aaa1b5;
-
-    font-size:14px;
-}
-
-.contact-email strong{
+    background:#1db954;
 
     color:#fff;
 }
@@ -2842,6 +2540,16 @@ footer strong{
    RESPONSIVE
 ========================================================= */
 
+@media(max-width:1100px){
+
+    .community-grid{
+
+        grid-template-columns:
+            repeat(3,1fr);
+    }
+
+}
+
 @media(max-width:900px){
 
     .nav-links{
@@ -2904,12 +2612,6 @@ footer strong{
             1fr 1fr;
     }
 
-    .players{
-
-        grid-template-columns:
-            1fr 1fr;
-    }
-
     .jersey-gallery{
 
         grid-template-columns:1fr;
@@ -2965,16 +2667,6 @@ footer strong{
         letter-spacing:-3px;
     }
 
-    .players{
-
-        grid-template-columns:1fr;
-    }
-
-    .player-image{
-
-        height:430px;
-    }
-
     .management-grid{
 
         grid-template-columns:1fr;
@@ -2995,11 +2687,6 @@ footer strong{
 
         grid-template-columns:
             1fr 1fr;
-    }
-
-    .order-buttons{
-
-        grid-template-columns:1fr;
     }
 
     .live-box{
@@ -3189,10 +2876,6 @@ TEAM
 MATCHES
 </a>
 
-<a href="#players">
-PLAYERS
-</a>
-
 <a href="#achievements">
 ACHIEVEMENTS
 </a>
@@ -3202,10 +2885,10 @@ JERSEY
 </a>
 
 <a
-href="#live"
+href="#community"
 class="nav-btn"
 >
-🔴 LIVE
+COMMUNITY
 </a>
 
 </div>
@@ -3243,10 +2926,6 @@ MATCHES
 LIVE
 </a>
 
-<a href="#players" onclick="closeMenu()">
-PLAYERS
-</a>
-
 <a href="#achievements" onclick="closeMenu()">
 ACHIEVEMENTS
 </a>
@@ -3255,8 +2934,8 @@ ACHIEVEMENTS
 JERSEY
 </a>
 
-<a href="#contact" onclick="closeMenu()">
-CONTACT
+<a href="#community" onclick="closeMenu()">
+COMMUNITY
 </a>
 
 </div>
@@ -3319,10 +2998,10 @@ class="btn btn-primary"
 </a>
 
 <a
-href="#players"
+href="#team"
 class="btn btn-outline"
 >
-MEET THE TEAM
+ABOUT THE TEAM
 </a>
 
 </div>
@@ -3396,19 +3075,6 @@ building a strong esports identity.
 <div class="stat">
 
 <strong>
-6
-</strong>
-
-<span>
-PLAYERS
-</span>
-
-</div>
-
-
-<div class="stat">
-
-<strong>
 FF
 </strong>
 
@@ -3431,6 +3097,19 @@ TAG
 
 </div>
 
+
+<div class="stat">
+
+<strong>
+OFC
+</strong>
+
+<span>
+ESPORTS
+</span>
+
+</div>
+
 </div>
 
 </div>
@@ -3444,8 +3123,8 @@ OUR MISSION
 
 <p>
 
-To compete with discipline, grow together as players
-and represent REFUGE UNITED with pride.
+To compete with discipline, grow together as an
+organization and represent REFUGE UNITED with pride.
 
 </p>
 
@@ -3597,8 +3276,6 @@ Monitoring 3 YouTube channels
 </div>
 
 
-<!-- VIDEO -->
-
 <div
 class="live-player"
 id="livePlayer"
@@ -3614,8 +3291,6 @@ allowfullscreen>
 
 </div>
 
-
-<!-- NO LIVE -->
 
 <div
 class="no-live-panel"
@@ -3644,8 +3319,6 @@ a channel starts streaming.
 
 </div>
 
-
-<!-- LIVE INFO -->
 
 <div
 class="live-info"
@@ -3956,342 +3629,6 @@ MVP AWARDS
 
 
 <!-- =========================================================
-     PLAYERS
-========================================================= -->
-
-<section
-class="players-section"
-id="players"
->
-
-<div class="container">
-
-
-<div class="section-head reveal">
-
-<small>
-OFFICIAL ROSTER
-</small>
-
-<h2>
-OUR PLAYERS
-</h2>
-
-<p>
-The players representing REFUGE UNITED OFC.
-</p>
-
-</div>
-
-
-<div class="players">
-
-
-<!-- PLAYER 01 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="4CE01E40-D395-47CE-86E4-122DBF6EBC7C.png"
-alt="RU.VAVLATEx7"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-01
-</div>
-
-<h3>
-RU.VAVLATEx7
-</h3>
-
-<div class="player-role">
-RUSHER
-</div>
-
-<div class="socials">
-
-<a
-class="social"
-href="#"
->
-IG
-</a>
-
-<a
-class="social"
-href="#"
->
-TT
-</a>
-
-<a
-class="social"
-href="#"
->
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PLAYER 02 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="84DC06E6-8ECD-4C38-B5ED-FE3E32F9F25C.jpeg"
-alt="RU.EGOIST7"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-02
-</div>
-
-<h3>
-RU.EGOIST7
-</h3>
-
-<div class="player-role">
-RUSHER
-</div>
-
-<div class="socials">
-
-<a class="social" href="#">
-IG
-</a>
-
-<a class="social" href="#">
-TT
-</a>
-
-<a class="social" href="#">
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PLAYER 03 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="FD455E5C-5DB0-4F3A-948D-26EEBAA78CF1.jpeg"
-alt="RU.STEVEz"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-03
-</div>
-
-<h3>
-RU.STEVEz
-</h3>
-
-<div class="player-role">
-SNIPER
-</div>
-
-<div class="socials">
-
-<a class="social" href="#">
-IG
-</a>
-
-<a class="social" href="#">
-TT
-</a>
-
-<a class="social" href="#">
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PLAYER 04 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="358A32A6-8784-4B67-8609-343B01E92234.jpeg"
-alt="RU.V!LLA!N7"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-04
-</div>
-
-<h3>
-RU.V!LLA!N7
-</h3>
-
-<div class="player-role">
-SUPPORTER
-</div>
-
-<div class="socials">
-
-<a class="social" href="#">
-IG
-</a>
-
-<a class="social" href="#">
-TT
-</a>
-
-<a class="social" href="#">
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PLAYER 05 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="3D60E9AF-273D-49A8-9B37-341E68D046F3.jpeg"
-alt="RU.SPRIT87"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-05
-</div>
-
-<h3>
-RU.SPRIT87
-</h3>
-
-<div class="player-role">
-BOMBER
-</div>
-
-<div class="socials">
-
-<a class="social" href="#">
-IG
-</a>
-
-<a class="social" href="#">
-TT
-</a>
-
-<a class="social" href="#">
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-<!-- PLAYER 06 -->
-
-<article class="player reveal">
-
-<div class="player-image">
-
-<img
-src="0A44C523-6787-4DD1-8D84-4D445D7CA6E4.jpeg"
-alt="RU.SIFAT87"
->
-
-</div>
-
-<div class="player-info">
-
-<div class="player-number">
-06
-</div>
-
-<h3>
-RU.SIFAT87
-</h3>
-
-<div class="player-role">
-RIFLER
-</div>
-
-<div class="socials">
-
-<a class="social" href="#">
-IG
-</a>
-
-<a class="social" href="#">
-TT
-</a>
-
-<a class="social" href="#">
-FB
-</a>
-
-</div>
-
-</div>
-
-</article>
-
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
      JERSEY
 ========================================================= -->
 
@@ -4394,40 +3731,14 @@ Available Sizes
 </div>
 
 
-<div class="order-buttons">
+<p class="order-note">
 
+For jersey orders, please use the
+<strong>WHATSAPP</strong> or
+<strong>INSTAGRAM</strong>
+contact options in the community section below.
 
-<a
-class="btn order-instagram"
-href="https://www.instagram.com/refuge.united"
-target="_blank"
-rel="noopener"
->
-INSTAGRAM ORDER
-</a>
-
-
-<a
-class="btn order-whatsapp"
-href="https://wa.me/8801317995822"
-target="_blank"
-rel="noopener"
->
-WHATSAPP 1
-</a>
-
-
-<a
-class="btn order-whatsapp"
-href="https://wa.me/8801815926033"
-target="_blank"
-rel="noopener"
->
-WHATSAPP 2
-</a>
-
-
-</div>
+</p>
 
 </div>
 
@@ -4437,10 +3748,13 @@ WHATSAPP 2
 
 
 <!-- =========================================================
-     COMMUNITY
+     COMMUNITY / ALL CONTACT
 ========================================================= -->
 
-<section class="community">
+<section
+class="community"
+id="community"
+>
 
 <div class="container">
 
@@ -4448,7 +3762,7 @@ WHATSAPP 2
 <div class="section-head reveal">
 
 <small>
-JOIN OUR COMMUNITY
+OFFICIAL CONTACT
 </small>
 
 <h2>
@@ -4456,7 +3770,7 @@ REFUGE UNITED ONLINE
 </h2>
 
 <p>
-Follow the team and stay connected.
+Follow the team, join our community or contact us directly.
 </p>
 
 </div>
@@ -4484,23 +3798,23 @@ width="18"
 height="18"
 rx="5"
 stroke="currentColor"
-stroke-width="2"
-></rect>
+stroke-width="2">
+</rect>
 
 <circle
 cx="12"
 cy="12"
 r="4"
 stroke="currentColor"
-stroke-width="2"
-></circle>
+stroke-width="2">
+</circle>
 
 <circle
 cx="17.5"
 cy="6.5"
 r="1"
-fill="currentColor"
-></circle>
+fill="currentColor">
+</circle>
 
 </svg>
 
@@ -4543,15 +3857,15 @@ d="M14 4V14.5C14 17 12.2 19 9.7 19C7.6 19 6 17.6 6 15.7C6 13.8 7.6 12.3 9.7 12.3
 stroke="currentColor"
 stroke-width="2"
 stroke-linecap="round"
-stroke-linejoin="round"
-></path>
+stroke-linejoin="round">
+</path>
 
 <path
 d="M14 4C14.4 6.2 15.8 7.6 18 8"
 stroke="currentColor"
 stroke-width="2"
-stroke-linecap="round"
-></path>
+stroke-linecap="round">
+</path>
 
 </svg>
 
@@ -4593,29 +3907,29 @@ xmlns="http://www.w3.org/2000/svg"
 d="M7.2 6.2C8.7 5.5 10.3 5.1 12 5.1C13.7 5.1 15.3 5.5 16.8 6.2C18.1 8.1 18.8 10.3 18.9 12.7C18.9 15.1 18.1 17.1 16.5 18.7C15.1 19.1 13.8 19.4 12.5 19.5L11.8 18.3C10.1 18.4 8.4 17.9 7 17C5.4 15.4 4.8 13.3 4.9 11C5 9.2 5.8 7.5 7.2 6.2Z"
 stroke="currentColor"
 stroke-width="1.8"
-stroke-linejoin="round"
-></path>
+stroke-linejoin="round">
+</path>
 
 <circle
 cx="9.5"
 cy="12"
 r="1.1"
-fill="currentColor"
-></circle>
+fill="currentColor">
+</circle>
 
 <circle
 cx="14.5"
 cy="12"
 r="1.1"
-fill="currentColor"
-></circle>
+fill="currentColor">
+</circle>
 
 <path
 d="M8.8 15C10.7 16 13.3 16 15.2 15"
 stroke="currentColor"
 stroke-width="1.5"
-stroke-linecap="round"
-></path>
+stroke-linecap="round">
+</path>
 
 </svg>
 
@@ -4641,6 +3955,67 @@ JOIN
 </div>
 
 
+<!-- WHATSAPP -->
+
+<div class="community-card whatsapp-card reveal">
+
+<div class="community-icon">
+
+<svg
+viewBox="0 0 24 24"
+fill="none"
+xmlns="http://www.w3.org/2000/svg"
+>
+
+<path
+d="M20 11.5C20 15.9 16.4 19.5 12 19.5C10.6 19.5 9.3 19.1 8.2 18.5L4 20L5.5 16C4.6 14.7 4 13.1 4 11.5C4 7.1 7.6 3.5 12 3.5C16.4 3.5 20 7.1 20 11.5Z"
+stroke="currentColor"
+stroke-width="2"
+stroke-linejoin="round">
+</path>
+
+<path
+d="M8.2 8.5C8.5 8 9 7.9 9.4 8.2L10.4 9.2C10.7 9.5 10.7 9.9 10.5 10.2L10 10.9C10.7 12.2 11.7 13.2 13 14L13.7 13.5C14 13.3 14.4 13.3 14.7 13.6L15.8 14.6C16.1 14.9 16 15.4 15.6 15.7C15.1 16.1 14.5 16.2 13.9 16C11 15 9 13 8 10.1C7.8 9.5 7.9 8.9 8.2 8.5Z"
+fill="currentColor">
+</path>
+
+</svg>
+
+</div>
+
+<h3>
+WhatsApp
+</h3>
+
+<p>
+Jersey orders & direct contact
+</p>
+
+<div style="display:grid;gap:8px;">
+
+<a
+class="btn whatsapp-btn"
+href="https://wa.me/8801317995822"
+target="_blank"
+rel="noopener"
+>
+WHATSAPP 1
+</a>
+
+<a
+class="btn whatsapp-btn"
+href="https://wa.me/8801815926033"
+target="_blank"
+rel="noopener"
+>
+WHATSAPP 2
+</a>
+
+</div>
+
+</div>
+
+
 <!-- EMAIL -->
 
 <div class="community-card reveal">
@@ -4660,16 +4035,16 @@ width="18"
 height="14"
 rx="2"
 stroke="currentColor"
-stroke-width="2"
-></rect>
+stroke-width="2">
+</rect>
 
 <path
 d="M4 7L12 13L20 7"
 stroke="currentColor"
 stroke-width="2"
 stroke-linecap="round"
-stroke-linejoin="round"
-></path>
+stroke-linejoin="round">
+</path>
 
 </svg>
 
@@ -4694,95 +4069,6 @@ EMAIL
 
 
 </div>
-
-</div>
-
-</section>
-
-
-<!-- =========================================================
-     CONTACT
-========================================================= -->
-
-<section
-class="contact"
-id="contact"
->
-
-<div class="container">
-
-
-<div class="section-head reveal">
-
-<small style="color:#b88cff;">
-CONNECT WITH US
-</small>
-
-<h2>
-JOIN THE REFUGE.
-</h2>
-
-<p>
-For jersey orders, partnerships, esports inquiries and more.
-</p>
-
-</div>
-
-
-<div class="contact-buttons">
-
-
-<a
-class="btn instagram"
-href="https://www.instagram.com/refuge.united"
-target="_blank"
-rel="noopener"
->
-INSTAGRAM
-</a>
-
-
-<a
-class="btn whatsapp"
-href="https://wa.me/8801317995822"
-target="_blank"
-rel="noopener"
->
-WHATSAPP 1
-</a>
-
-
-<a
-class="btn whatsapp"
-href="https://wa.me/8801815926033"
-target="_blank"
-rel="noopener"
->
-WHATSAPP 2
-</a>
-
-
-<a
-class="btn email"
-href="mailto:refugeunitedofc@gmail.com"
->
-EMAIL US
-</a>
-
-
-</div>
-
-
-<div class="contact-email">
-
-<strong>
-Email:
-</strong>
-
-refugeunitedofc@gmail.com
-
-</div>
-
 
 </div>
 
@@ -4815,8 +4101,8 @@ All Rights Reserved.
 Home
 </a>
 
-<a href="#players">
-Players
+<a href="#team">
+Team
 </a>
 
 <a href="#matches">
@@ -4831,8 +4117,8 @@ Live
 Jersey
 </a>
 
-<a href="#contact">
-Contact
+<a href="#community">
+Community
 </a>
 
 </div>
@@ -4865,17 +4151,19 @@ aria-label="Back to top"
 
 IMPORTANT:
 
-Do NOT use the API key that you previously posted publicly.
+Create a NEW Google YouTube Data API key.
 
-Create a new Google API key and restrict it to your
-GitHub Pages website.
+Do NOT publish an old/exposed API key.
 
-Then paste the NEW key below.
+For a public GitHub Pages website, restrict the key
+to your website domain in Google Cloud Console.
+
+Paste your NEW restricted key below.
 
 */
 
 const YOUTUBE_API_KEY =
-"AIzaSyAJlwIKGMW1pdf0wELKK8PjPdAKL1Opoms";
+"PASTE_YOUR_NEW_RESTRICTED_YOUTUBE_API_KEY_HERE";
 
 
 /* =========================================================
@@ -4908,22 +4196,6 @@ const YOUTUBE_CHANNELS = [
 /* =========================================================
    LIVE CHECK INTERVAL
 ========================================================= */
-
-/*
-
-120 seconds = 2 minutes.
-
-This system uses:
-
-activities.list
-+
-videos.list
-
-instead of repeatedly using search.list.
-
-That keeps the quota usage much lower.
-
-*/
 
 const LIVE_CHECK_INTERVAL =
     120000;
@@ -5526,6 +4798,20 @@ function showNoLive(){
     );
 
 
+    noLivePanel.querySelector(
+        "h3"
+    ).innerText =
+        "NO LIVE MATCH";
+
+
+    noLivePanel.querySelector(
+        "p"
+    ).innerHTML =
+        "None of the monitored YouTube channels is currently live." +
+        "<br><br>" +
+        "This section automatically updates when a channel starts streaming.";
+
+
     liveInfo.classList.remove(
         "show"
     );
@@ -5658,15 +4944,6 @@ async function checkAllChannels(){
         let liveStreams = [];
 
 
-        /*
-
-        Check all three channels.
-
-        Promise.all allows the requests
-        to happen simultaneously.
-
-        */
-
         const results =
             await Promise.all(
                 YOUTUBE_CHANNELS.map(
@@ -5696,11 +4973,6 @@ async function checkAllChannels(){
         if(
             liveStreams.length > 0
         ){
-
-            /*
-               If multiple channels are live,
-               the first detected stream is shown.
-            */
 
             showLive(
                 liveStreams[0]
